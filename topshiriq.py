@@ -6,14 +6,16 @@ def main():
     greeting()
     random_number = get_random_number()
     imkoniyat = 4
-
+    summ = 10000
+    print(f"Sizning balansingiz: {summ}")
 
     
     while True:
         imkoniyat -= 1
         if imkoniyat == 0:
             print("Imkoniyatlaringiz tugadi siz yutqizdingiz!!!")
-            print(f"Men o`ylagan son {random_number} edi.")     
+            print(f"Men o`ylagan son {random_number} edi.")
+            summ -= 1000     
             break
         
         input_number = get_number_from_user()
@@ -38,6 +40,7 @@ def main():
         elif hint == "teng":
             print("Tabriklayman siz yutdingiz!")
             print("Yana kutib qolamiz")
+            summ += 1000
             break
         
 
@@ -60,9 +63,9 @@ def get_number_from_user():
     return int(input())
 
 def get_hint(random_number: int, input_number: int):
-    if random_number - input_number == 1:
+    if random_number - input_number == 2 or input_number - input_number == 1:
         return "siz men o`ylagan songa o`ta yaqinsiz"
-    if input_number - random_number == 1:
+    if input_number - random_number == 2 or input_number - input_number == 1:
         return "siz ozgina o`tib ketdingiz.."    
     elif random_number > input_number:
         return "katta"
